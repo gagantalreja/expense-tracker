@@ -1,0 +1,61 @@
+{
+    "shopping": [
+        "amazon",
+        "flipkart",
+        "myntra",
+        "bewakoof",
+        "souled store"
+    ],
+    "food_delivery": [
+        "zomato",
+        "swiggy",
+        "bundl technologies",
+        "food",
+        "bakery"
+    ],
+    "instant_delivery": [
+        "blinkit",
+        "zepto",
+        "instamart",
+        "geddit",
+        "grofers",
+        "bigbasket",
+        "big basket"
+    ],
+    "local_shopping": [
+        "ratnadeep",
+        "jodhpur store",
+        "jharkhande kailash"
+    ],
+    "tiffin": [
+        "roshan ara"
+    ],
+    "mobile": [
+        "airtel",
+        "jio"
+    ],
+    "entertainment": [
+        "d2h",
+        "netflix",
+        "prime",
+        "zee",
+        "youtube",
+        "bookmyshow",
+        "entertainment",
+        "cine",
+        "spotify",
+        "hotstar"
+    ],
+    "flight_booking": [
+        "indigo",
+        "air india",
+        "flight"
+    ],
+    "medical": [
+        "medical",
+        "apollo",
+        "thyrocare",
+        "hospital",
+        "pharmeasy"
+    ]
+}
