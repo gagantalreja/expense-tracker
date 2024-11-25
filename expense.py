@@ -1,17 +1,17 @@
 import pandas as pd
 from datetime import datetime
+from utils.pdf_to_df import pdf_to_dataframe
+from argparse import ArgumentParser
 from utils.charts import (
     plot_monthly_expense,
     plot_monthwise_catwise,
     plot_monthly_expense_line,
     plot_monthwise_catwise_line
 )
-from utils.pdf_to_df import pdf_to_dataframe
 
+def analyze_expenses(file_path, create_csv):
 
-def analyze_expenses(file_path):
-
-    df = pdf_to_dataframe(file_path, create_file=True)
+    df = pdf_to_dataframe(file_path, create_csv=create_csv)
     df.columns = df.columns.str.strip().str.lower()
 
     # Clean and convert 'debit' and 'credit' columns
@@ -41,7 +41,15 @@ def analyze_expenses(file_path):
     # plot_monthly_expense_line(df)
     plot_monthwise_catwise_line(df)
 
+def get_args():
+    parser = ArgumentParser()
+
+    parser.add_argument("--pdf", help="Expense PDF", required=True)
+    parser.add_argument("--create-csv", action="store_true", help="Save modified and categorised data as csv")
+
+    return parser.parse_args()
 
 if __name__ == "__main__":
-    file_path = "/Users/talreja/Downloads/Paytm_UPI_Statement_01_Jan'24_-_21_Nov'24.pdf"  # Replace with the path to your Excel file
-    analyze_expenses(file_path)
+    
+    args = get_args()
+    analyze_expenses(args.pdf, args.create_csv)

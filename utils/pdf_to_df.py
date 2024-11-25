@@ -22,7 +22,7 @@ def paytm_pdf_delim(text):
     return None, None
 
 
-def pdf_to_dataframe(file_path, create_file=False):
+def pdf_to_dataframe(file_path, create_csv=False):
     pdf_path = file_path
     with pdfplumber.open(pdf_path) as pdf:
         data = []
@@ -54,7 +54,7 @@ def pdf_to_dataframe(file_path, create_file=False):
 
     columns = ["Date", "Description", "Debit"]
     df = pd.DataFrame(data, columns=columns)
-    if create_file:
+    if create_csv:
         df.to_csv("bank_statement.csv", index=None)
 
     return df
