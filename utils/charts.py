@@ -15,7 +15,7 @@ def plot_monthly_expense(df):
 
 def plot_monthwise_catwise(df):
   # Expenses by month and category
-  expense_summary = df.groupby(['month', 'description'])['debit'].sum().unstack(fill_value=0)
+  expense_summary = df.groupby(['month', 'category'])['debit'].sum().unstack(fill_value=0)
   
   # Plotting the month-wise category stacked bar chart
   ax = expense_summary.plot(kind='bar', stacked=True, figsize=(14, 8), colormap='tab20', width=0.8)
@@ -53,7 +53,7 @@ def plot_monthly_expense_line(df):
 
 def plot_monthwise_catwise_line(df):
   # Group by month and description (category) and sum the expenses
-  monthly_category_expenses = df.groupby(['month', 'description'])['debit'].sum().unstack(fill_value=0)
+  monthly_category_expenses = df.groupby(['month', 'category'])['debit'].sum().unstack(fill_value=0)
 
   # Plotting the month-wise category-wise line chart
   plt.figure(figsize=(14, 8))
